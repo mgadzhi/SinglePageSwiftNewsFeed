@@ -13,6 +13,7 @@
 		E6E8C7541ADAA80000231FD6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6E8C7531ADAA80000231FD6 /* Images.xcassets */; };
 		E6E8C7571ADAA80000231FD6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6E8C7551ADAA80000231FD6 /* LaunchScreen.xib */; };
 		E6E8C7631ADAA80000231FD6 /* SinglePageSwiftNewsFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E8C7621ADAA80000231FD6 /* SinglePageSwiftNewsFeedTests.swift */; };
+		EF0931551AE292C3004024D8 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = EF0931541AE292C3004024D8 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		E6E8C75C1ADAA80000231FD6 /* SinglePageSwiftNewsFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SinglePageSwiftNewsFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6E8C7611ADAA80000231FD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6E8C7621ADAA80000231FD6 /* SinglePageSwiftNewsFeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePageSwiftNewsFeedTests.swift; sourceTree = "<group>"; };
+		EF0931541AE292C3004024D8 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		E6E8C73E1ADAA80000231FD6 = {
 			isa = PBXGroup;
 			children = (
+				EF0931541AE292C3004024D8 /* .gitignore */,
 				E6E8C7491ADAA80000231FD6 /* SinglePageSwiftNewsFeed */,
 				E6E8C75F1ADAA80000231FD6 /* SinglePageSwiftNewsFeedTests */,
 				E6E8C7481ADAA80000231FD6 /* Products */,
@@ -192,6 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF0931551AE292C3004024D8 /* .gitignore in Resources */,
 				E6E8C7521ADAA80000231FD6 /* Main.storyboard in Resources */,
 				E6E8C7571ADAA80000231FD6 /* LaunchScreen.xib in Resources */,
 				E6E8C7541ADAA80000231FD6 /* Images.xcassets in Resources */,
@@ -411,6 +415,7 @@
 				E6E8C7681ADAA80000231FD6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E6E8C7691ADAA80000231FD6 /* Build configuration list for PBXNativeTarget "SinglePageSwiftNewsFeedTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +424,7 @@
 				E6E8C76B1ADAA80000231FD6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
