@@ -21,6 +21,9 @@
                             <outlet property="delegate" destination="BYZ-38-t0r" id="NhR-V7-ciP"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="8bC-Xf-vdC" id="UpJ-Pt-mXv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet var tableView : UITableView!
+
     var tableData: [[String: String]] = []
 
     override func viewDidLoad() {
@@ -24,8 +26,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     func fetchRemoteData() {
-        self.tableData.append(["title": "Title 1", "author": "Ivan"])
-        self.tableData.append(["title": "Title 2", "author": "Maria"])
+        let address = "http://api-trololo.rhcloud.com/list.json"
+        let mySession = NSURLSession.sharedSession()
+        let url: NSURL = NSURL(string: address)!
+
+        let networkTask = mySession.dataTaskWithURL(url, completionHandler: { data, response, error -> Void in
+            var err: NSError?
+            let json: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &err)
+            let entries = json as! [[String: AnyObject]]
+            for entry in entries {
+                if let
+                  id    = entry["id"]    as? Int,
+                  title = entry["title"] as? String {
+                    self.tableData.append(["title": title])
+                }
+            }
+            dispatch_async(dispatch_get_main_queue(), {
+                self.tableView.reloadData()
+            })
+        })
+        networkTask.resume()
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -36,7 +56,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "MyTestCell")
         let dataEntry = self.tableData[indexPath.row]
         cell.textLabel!.text = dataEntry["title"] as String?
-        cell.detailTextLabel!.text = dataEntry["author"] as String?
         return cell
     }
 
