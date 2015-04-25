@@ -33,4 +33,18 @@ class SinglePageSwiftNewsFeedTests: XCTestCase {
         }
     }
     
+    func testFeedFromJSONData() {
+        let jsonData = "{\"id\": 42, \"title\": \"Превью к матчу с «Манчестер Сити»\", \"timestamp\": 1428845851 }".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
+        let jsonArrayData = "[{\"id\": 42, \"title\": \"Превью к матчу с «Манчестер Сити»\", \"timestamp\": 1428845851 }]".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
+        
+        
+        
+        if let entry: FeedEntry = FeedEntry.fromJSONData(jsonData!) {
+            NSLog("\(entry)")
+        }
+        else {
+            NSLog("Fail")
+        }
+    }
+    
 }

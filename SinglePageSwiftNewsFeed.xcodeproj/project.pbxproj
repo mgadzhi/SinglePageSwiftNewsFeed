@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E651DD131AE3FA1E0051C9E1 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E651DD121AE3FA1E0051C9E1 /* Feed.swift */; };
+		E651DD141AE42A4F0051C9E1 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E651DD121AE3FA1E0051C9E1 /* Feed.swift */; };
 		E6E8C74D1ADAA80000231FD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E8C74C1ADAA80000231FD6 /* AppDelegate.swift */; };
 		E6E8C74F1ADAA80000231FD6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E8C74E1ADAA80000231FD6 /* ViewController.swift */; };
 		E6E8C7521ADAA80000231FD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6E8C7501ADAA80000231FD6 /* Main.storyboard */; };
@@ -27,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E651DD121AE3FA1E0051C9E1 /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		E6E8C7471ADAA80000231FD6 /* SinglePageSwiftNewsFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinglePageSwiftNewsFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6E8C74B1ADAA80000231FD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6E8C74C1ADAA80000231FD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +89,7 @@
 				E6E8C7531ADAA80000231FD6 /* Images.xcassets */,
 				E6E8C7551ADAA80000231FD6 /* LaunchScreen.xib */,
 				E6E8C74A1ADAA80000231FD6 /* Supporting Files */,
+				E651DD121AE3FA1E0051C9E1 /* Feed.swift */,
 			);
 			path = SinglePageSwiftNewsFeed;
 			sourceTree = "<group>";
@@ -217,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6E8C74F1ADAA80000231FD6 /* ViewController.swift in Sources */,
+				E651DD131AE3FA1E0051C9E1 /* Feed.swift in Sources */,
 				E6E8C74D1ADAA80000231FD6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -226,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6E8C7631ADAA80000231FD6 /* SinglePageSwiftNewsFeedTests.swift in Sources */,
+				E651DD141AE42A4F0051C9E1 /* Feed.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
