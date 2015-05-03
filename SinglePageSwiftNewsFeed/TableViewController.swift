@@ -8,9 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
-    @IBOutlet var tableView : UITableView!
+class TableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
 
     var tableData: [[String: String]] = []
 
@@ -38,7 +36,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 if let
                   id    = entry["id"]    as? Int,
                   title = entry["title"] as? String {
-                    self.tableData.append(["title": title])
+                  self.tableData.append(["title": title])
                 }
             }
             dispatch_async(dispatch_get_main_queue(), {
@@ -48,12 +46,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         networkTask.resume()
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableData.count
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.tableData.count
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "MyTestCell")
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("entryCell") as! UITableViewCell
         let dataEntry = self.tableData[indexPath.row]
         cell.textLabel!.text = dataEntry["title"] as String?
         return cell
