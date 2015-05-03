@@ -39,10 +39,10 @@
             </objects>
             <point key="canvasLocation" x="938" y="310"/>
         </scene>
-        <!--View Controller-->
+        <!--Entry View Controller-->
         <scene sceneID="2mn-Eh-nYl">
             <objects>
-                <viewController id="8ta-Ap-q2A" sceneMemberID="viewController">
+                <viewController id="8ta-Ap-q2A" customClass="EntryViewController" customModule="SinglePageSwiftNewsFeed" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OM1-bW-k1t"/>
                         <viewControllerLayoutGuide type="bottom" id="Ve5-Og-gzj"/>
@@ -57,9 +57,18 @@
                                     <navigationItem title="Entry" id="bKU-Sk-Kaw"/>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TS3-Pe-KyJ">
+                                <rect key="frame" x="16" y="102" width="568" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="view" destination="XEz-Ok-ga6" id="Rs4-5Q-SZG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BOY-ev-4fn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
