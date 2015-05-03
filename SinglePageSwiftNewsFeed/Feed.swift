@@ -11,13 +11,28 @@ import Foundation
 class FeedEntry {
     
     var id: Int
-    var timestamp: Int
+    var author: String
     var title: String
+    var body: String
+    var categories: [String]
+    var timestamp: Int
     
-    init(id: Int, timestamp: Int, title: String) {
+    init() {
+        self.id = 0
+        self.author = ""
+        self.title = ""
+        self.body = ""
+        self.categories = []
+        self.timestamp = 0
+    }
+    
+    init(id: Int, author: String, title: String, body: String, categories: [String], timestamp: Int) {
         self.id = id
-        self.timestamp = timestamp
+        self.author = author
         self.title = title
+        self.body = body
+        self.categories = categories
+        self.timestamp = timestamp
     }
     
     class func fromJSONData(data: NSData) -> FeedEntry? {
@@ -25,9 +40,12 @@ class FeedEntry {
         if let entry = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &err) as? NSDictionary {
             if let
                 id = entry["id"] as? Int,
-                timestamp = entry["timestamp"] as? Int,
-                title = entry["title"] as? String{
-                    return FeedEntry(id: id, timestamp: timestamp, title: title)
+                author = entry["author"] as? String,
+                title = entry["title"] as? String,
+                body = entry["body"] as? String,
+                categories = entry["categories"] as? [String],
+                timestamp = entry["timestamp"] as? Int {
+                    return FeedEntry(id: id, author: author, title: title, body: body, categories: categories, timestamp: timestamp)
             }
         }
         return nil
@@ -46,12 +64,15 @@ class Feed {
         var err: NSError?
         var news = [FeedEntry]()
         if let entries = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &err) as? [[NSString: AnyObject]] {
-            for e in entries {
+            for entry in entries {
                 if let
-                    id = e["id"] as? Int,
-                    timestamp = e["timestamp"] as? Int,
-                    title = e["title"] as? String {
-                        news.append(FeedEntry(id: id, timestamp: timestamp, title: title))
+                    id = entry["id"] as? Int,
+                    author = entry["author"] as? String,
+                    title = entry["title"] as? String,
+                    body = entry["body"] as? String,
+                    categories = entry["categories"] as? [String],
+                    timestamp = entry["timestamp"] as? Int {
+                        news.append(FeedEntry(id: id, author: author, title: title, body: body, categories: categories, timestamp: timestamp))
                 }
             }
             return Feed(entries: news)
