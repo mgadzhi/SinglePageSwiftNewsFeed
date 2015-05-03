@@ -69,10 +69,15 @@ class Feed {
                     id = entry["id"] as? Int,
                     author = entry["author"] as? String,
                     title = entry["title"] as? String,
-                    body = entry["body"] as? String,
                     categories = entry["categories"] as? [String],
                     timestamp = entry["timestamp"] as? Int {
-                        news.append(FeedEntry(id: id, author: author, title: title, body: body, categories: categories, timestamp: timestamp))
+                        let e = FeedEntry()
+                        e.id = id
+                        e.author = author
+                        e.title = title
+                        e.categories = categories
+                        e.timestamp = timestamp
+                        news.append(e)
                 }
             }
             return Feed(entries: news)
