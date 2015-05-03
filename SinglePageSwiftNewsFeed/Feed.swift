@@ -54,10 +54,10 @@ class FeedEntry {
 
 class Feed {
     
-    var news: [FeedEntry]
+    var entries: [FeedEntry]
     
     init(entries: [FeedEntry]) {
-        self.news = entries
+        self.entries = entries
     }
     
     class func fromJSONData(data: NSData) -> Feed? {
@@ -78,6 +78,9 @@ class Feed {
                         e.categories = categories
                         e.timestamp = timestamp
                         news.append(e)
+                }
+                else {
+                    NSLog("Failed to parse %@", entry)
                 }
             }
             return Feed(entries: news)

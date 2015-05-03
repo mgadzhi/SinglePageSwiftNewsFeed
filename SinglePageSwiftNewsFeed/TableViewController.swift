@@ -29,15 +29,12 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
         let url: NSURL = NSURL(string: address)!
 
         let networkTask = mySession.dataTaskWithURL(url, completionHandler: { data, response, error -> Void in
-            var err: NSError?
-            let json: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &err)
-            let entries = json as! [[String: AnyObject]]
+            var entries = [FeedEntry]()
+            if let feed = Feed.fromJSONData(data){
+                entries = feed.entries
+            }
             for entry in entries {
-                if let
-                  id    = entry["id"]    as? Int,
-                  title = entry["title"] as? String {
-                  self.tableData.append(["title": title])
-                }
+                self.tableData.append(["title": entry.title])
             }
             dispatch_async(dispatch_get_main_queue(), {
                 self.tableView.reloadData()
